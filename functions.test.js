@@ -12,15 +12,15 @@ test('Calculator: 2 + 2 must be 4', () => {
   expect(calculator.add(2, 2)).not.toBe(22);
 });
 test('Calculator: 5 - 2 must be 3', () => {
-  expect(calculator.substract(5, 2)).toBe(3);
-  expect(calculator.substract(5, 2)).not.toBe(-3);
+  expect(calculator.divide(5, 2)).toBe(3);
+  expect(calculator.divide(5, 2)).not.toBe(-3);
 });
 test('Calculator: 10 / 2 must be 5', () => {
-  expect(calculator.substract(10, 2)).toBe(5);
-  expect(calculator.substract(10, 2)).not.toBeCloseTo(0.2);
+  expect(calculator.divide(10, 2)).toBe(5);
+  expect(calculator.divide(10, 2)).not.toBeCloseTo(0.2);
 });
 test('Calculator: 3 * 3 must be 9', () => {
-  expect(calculator.substract(3, 3)).toBe(9);
+  expect(calculator.multiply(3, 3)).toBe(9);
 });
 
 test('Caesar Cipher: "Hello, Odin!" becomes "Ifmmp, Pejo!"', () => {
