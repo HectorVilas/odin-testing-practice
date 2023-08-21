@@ -17,20 +17,23 @@ const calculator = (() => {
   return { add, substract, divide, multiply };
 })();
 
+function caesarNextChar(char) {
+  const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  const lowerCase = char.toLowerCase();
+
+  if (chars.includes(lowerCase)) {
+    const charIndex = chars.indexOf(lowerCase);
+    const nextChar = chars[(charIndex + 1) % (chars.length)];
+    return char === chars[charIndex] ? nextChar : nextChar.toUpperCase();
+  }
+  
+  return char;
+}
+
 function caesarCipher(str) {
-  const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-  'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   let encrypted = "";
   
-  [...str].forEach((char) => {
-    if (chars.includes(char.toLowerCase())) {
-      const charIndex = chars.indexOf(char.toLowerCase());
-      const nextChar = chars[(charIndex + 1) % (chars.length)];
-      encrypted += char === chars[charIndex] ? nextChar : nextChar.toUpperCase();
-    } else {
-      encrypted += char;
-    }
-  });
+  [...str].forEach((char) => encrypted += caesarNextChar(char));
 
   return encrypted;
 }
