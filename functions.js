@@ -9,21 +9,10 @@ function reverseString(str) {
 }
 
 const calculator = (() => {
-  function add(a, b) {
-    return a + b;
-  }
-
-  function substract(a, b) {
-    return a - b;
-  }
-
-  function divide(a, b) {
-    return a / b;
-  }
-
-  function multiply(a, b) {
-    return a * b;
-  }
+  const  add = (a, b) => a + b;
+  const substract = (a, b) => a - b;
+  const divide = (a, b) => a / b;
+  const multiply = (a, b) => a * b;
 
   return { add, substract, divide, multiply };
 })();
