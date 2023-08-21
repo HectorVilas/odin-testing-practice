@@ -36,9 +36,8 @@ function caesarCipher(str) {
   [...str].forEach((char) => {
     if (chars.includes(char.toLowerCase())) {
       const charIndex = chars.indexOf(char.toLowerCase());
-      encrypted += char === chars[charIndex]
-        ? chars[(charIndex + 1) % (chars.length)]
-        : chars[(charIndex + 1) % (chars.length)].toUpperCase();
+      const nextChar = chars[(charIndex + 1) % (chars.length)];
+      encrypted += char === chars[charIndex] ? nextChar : nextChar.toUpperCase();
     } else {
       encrypted += char;
     }
