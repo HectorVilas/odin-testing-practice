@@ -31,6 +31,9 @@ test('Caesar Cipher: "Hello, Odin!" becomes "Ifmmp, Pejo!"', () => {
   expect(functions.caesarCipher(test)).not.toBe('ifmmp, pejo!');
   expect(functions.caesarCipher(test)).not.toBe('Ifmmp Pejo');
 });
+test('Caesar Cipher: "xyz XYZ" becomes "yza YZA"', () => {
+  expect(functions.caesarCipher('xyz XYZ')).toBe('yza YZA');
+});
 
 test('Analyze array: [1,8,3,4,2,6] must return { average: 4, min: 1, max: 8, length: 6 }', () => {
   const test = {
